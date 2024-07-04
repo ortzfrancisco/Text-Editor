@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // Routes
 const htmlRoutes = require('./routes/htmlRoutes');
-app.use(htmlRoutes);
+app.use('/',htmlRoutes);
 
 // Start the server
 app.listen(PORT, () => {
