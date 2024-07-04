@@ -1,18 +1,27 @@
 {
   "name": "text-editor",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A Progressive Web Application (PWA) text editor",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "build": "webpack --mode production",
+    "server": "nodemon server/server.js",
+    "client": "webpack-dev-server --mode development --open --hot",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install": "cd client && npm install"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
   "dependencies": {
-    "idb": "^8.0.0",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "express": "^4.17.1",
+    "idb": "^5.0.7"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.15"
   }
 }
